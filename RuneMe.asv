@@ -82,24 +82,14 @@ title('Objects seperated');
 NumObjects = max(max(ImObjects));
 
 for id=1:NumObjects
-	subplot(8,9,id);
-	ImTempShape = ImObjects;
-	% for each pixel
-	for i=1:size(ImObjects,1)
-		for j=1:size(ImObjects,2)
-			% if pixel matches current searching id
-			if(ImObjects(i,j) == id)
-				% set object pixel to white
+	ImTempShape = NumObjects;
+	for i=1:size(NumObjects,1)
+		for j=1:size(NumObjects,2)
+			if(NumObjects(i,j) == id)
 				ImTempShape(i,j) = 1;
-			else
-				% set non-object pixel to black
-				ImTempShape(i,j) = 0;
 			end
 		end
-	end  
-	
-	imshow(ImTempShape)
-	title(strcat('shape no. ', num2str(id)));
+	end
 end
 
 figure;
