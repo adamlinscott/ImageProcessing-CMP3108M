@@ -43,25 +43,25 @@ figure;
 se = strel('disk', 3);
 
 % Dilate Image
-ImDil = imdilate(ImInvert,se);
+ImDil = imdilate(ImBin,se);
 subplot(2,2,1);
 imshow(ImDil)
 title('dilate');
 
 % Erode Image
-ImEro = imerode(ImInvert,se);
+ImEro = imerode(ImBin,se);
 subplot(2,2,2);
 imshow(ImEro)
 title('erode');
 
 % Open Image
-ImOpe = imopen(ImInvert,se);
+ImOpe = imopen(ImBin,se);
 subplot(2,2,3);
 imshow(ImOpe)
 title('open');
 
 % Close Image
-ImClo = imclose(ImInvert,se);
+ImClo = imclose(ImBin,se);
 subplot(2,2,4);
 imshow(ImClo)
 title('close');
