@@ -24,18 +24,23 @@ title('Step-3: Removal of noise');
 
 % Step-4: Enhance image
 figure;
-ImEnhanced = imadjust(ImMedian,[0.8 1],[1 0]);
+ImEnhanced = imadjust(ImMedian,[0.8 1],[0 1]);
 imshow(ImEnhanced)
 title('Step-4: Enhance image');
-
-
-% Step-5: Convert to binary image
+% Step-5(1): invert enhanced image
 figure;
-ImBin = im2bw(ImEnhanced);
+ImInvert = imcomplement(ImEnhanced);
+imshow(ImInvert)
+title('Step-5(1): Invert Enhanced image');
+
+
+% Step-5(2): Convert to binary image
+figure;
+ImBin = im2bw(ImInvert);
 %ImBin = imbinarize(ImEnhanced);
 %ImInvert = imcomplement(ImBin);
 imshow(ImBin)
-title('Step-5: Convert to binary image');
+title('Step-5(2): Convert to binary image');
 
 
 % Step-6: morphological processing
