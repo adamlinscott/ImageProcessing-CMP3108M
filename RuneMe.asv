@@ -38,9 +38,6 @@ imhist(ImEnhanced)
 figure;
 imshow(ImEnhanced)
 title('Step-4: Enhance image');
-
-
-
 % Step-5(1): invert enhanced image
 figure;
 ImInvert = imcomplement(ImEnhanced);
